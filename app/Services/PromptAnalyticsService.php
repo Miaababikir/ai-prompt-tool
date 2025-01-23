@@ -41,7 +41,7 @@ class PromptAnalyticsService
         return PromptLog::query()
             ->where("type", "!=", PromptType::EvaluatePrompt->value)
             ->where("status", PromptStatus::Succeeded->value)
-            ->select("type", "relevance_suggestion", "clarity_suggestion", "tone_suggestion")
+            ->select("prompt", "type", "relevance_suggestion", "clarity_suggestion", "tone_suggestion")
             ->orderByDesc("created_at")
             ->limit(5)
             ->get();

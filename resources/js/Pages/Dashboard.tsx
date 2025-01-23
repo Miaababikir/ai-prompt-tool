@@ -27,6 +27,7 @@ interface Props {
     };
     latestPromptSuggestions: Array<{
         type: string;
+        prompt: string;
         relevance_suggestion: string;
         clarity_suggestion: string;
         tone_suggestion: string;
@@ -192,16 +193,19 @@ export default function Dashboard({
                                     <TableHeader>
                                         <TableRow>
                                             <TableHead className="w-1/12"></TableHead>
-                                            <TableHead className="w-1/4">
+                                            <TableHead className="w-1/5">
+                                                Type
+                                            </TableHead>
+                                            <TableHead className="w-1/5">
                                                 Prompt
                                             </TableHead>
-                                            <TableHead className="w-1/4">
+                                            <TableHead className="w-1/5">
                                                 Relevance suggestion
                                             </TableHead>
-                                            <TableHead className="w-1/4">
+                                            <TableHead className="w-1/5">
                                                 Clarity suggestion
                                             </TableHead>
-                                            <TableHead className="w-1/4">
+                                            <TableHead className="w-1/5">
                                                 Tone suggestion
                                             </TableHead>
                                         </TableRow>
@@ -231,24 +235,30 @@ export default function Dashboard({
                                                                 )}
                                                             </Button>
                                                         </TableCell>
-                                                        <TableCell className="w-1/4 font-medium">
+                                                        <TableCell className="w-1/5 font-medium">
                                                             {getPromptTypeLabel(
                                                                 item.type,
                                                             )}
                                                         </TableCell>
-                                                        <TableCell className="w-1/4 truncate">
+                                                        <TableCell className="w-1/5 truncate">
+                                                            {truncateText(
+                                                                item.prompt,
+                                                                50,
+                                                            )}
+                                                        </TableCell>
+                                                        <TableCell className="w-1/5 truncate">
                                                             {truncateText(
                                                                 item.relevance_suggestion,
                                                                 50,
                                                             )}
                                                         </TableCell>
-                                                        <TableCell className="w-1/4 truncate">
+                                                        <TableCell className="w-1/5 truncate">
                                                             {truncateText(
                                                                 item.clarity_suggestion,
                                                                 50,
                                                             )}
                                                         </TableCell>
-                                                        <TableCell className="w-1/4 truncate">
+                                                        <TableCell className="w-1/5 truncate">
                                                             {truncateText(
                                                                 item.tone_suggestion,
                                                                 50,
@@ -263,7 +273,17 @@ export default function Dashboard({
                                                                 colSpan={5}
                                                                 className="px-4"
                                                             >
-                                                                <div className="grid grid-cols-3 gap-4 py-4">
+                                                                <div className="grid grid-cols-4 gap-4 py-4">
+                                                                    <div>
+                                                                        <h4 className="mb-2 font-semibold">
+                                                                            Prompt
+                                                                        </h4>
+                                                                        <p>
+                                                                            {
+                                                                                item.prompt
+                                                                            }
+                                                                        </p>
+                                                                    </div>
                                                                     <div>
                                                                         <h4 className="mb-2 font-semibold">
                                                                             Relevance
