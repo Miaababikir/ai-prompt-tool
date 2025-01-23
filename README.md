@@ -2,6 +2,9 @@
 
 AI prompt tool that will allow users to generate AI-powered prompts for various use cases. And also having the ability to see reports on the generated prompts.
 
+## API documentation
+For documentation on how to use the API, please refer to the postman collection at the root folder of the project.
+
 ## Requirements
 
 - PHP 8.0+

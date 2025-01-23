@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "4edffd02-267d-498c-9ce7-6ff11e2e2acb",
+		"name": "Prompt Tool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3281457"
+	},
+	"item": [
+		{
+			"name": "Generate video titles",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prompt\": \"I am working on video on explaining the diffrence between microservice and monolith applications\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PROMPT_APP_URL}}/api/prompts/video-title-generator",
+					"host": [
+						"{{PROMPT_APP_URL}}"
+					],
+					"path": [
+						"api",
+						"prompts",
+						"video-title-generator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate job application email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{PROMPT_APP_URL}}/api/prompts/job-application-email-generator",
+					"host": [
+						"{{PROMPT_APP_URL}}"
+					],
+					"path": [
+						"api",
+						"prompts",
+						"job-application-email-generator"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
