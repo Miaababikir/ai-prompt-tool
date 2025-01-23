@@ -40,6 +40,9 @@ class EvaluatePrompt implements ShouldQueue
                 "relevance_score" => $scores->relevance,
                 "clarity_score" => $scores->clarity,
                 "tone_score" => $scores->tone,
+                "relevance_suggestion" => $scores->suggestions->relevance,
+                "clarity_suggestion" => $scores->suggestions->clarity,
+                "tone_suggestion" => $scores->suggestions->tone,
             ]);
 
         } catch (\Exception $e) {

@@ -15,5 +15,8 @@ class PromptLog extends Model
         "relevance_score",
         "clarity_score",
         "tone_score",
+        "relevance_suggestion",
+        "clarity_suggestion",
+        "tone_suggestion",
     ];
 }
