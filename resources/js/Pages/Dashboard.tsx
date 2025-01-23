@@ -270,7 +270,7 @@ export default function Dashboard({
                                                     ) && (
                                                         <TableRow>
                                                             <TableCell
-                                                                colSpan={5}
+                                                                colSpan={6}
                                                                 className="px-4"
                                                             >
                                                                 <div className="grid grid-cols-4 gap-4 py-4">
